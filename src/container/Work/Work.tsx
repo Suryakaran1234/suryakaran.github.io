@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, useEffect, ReactNode } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
@@ -7,9 +9,8 @@ import { urlFor, client } from 'client';
 
 import './Work.scss';
 
-type Props = {};
-
 type WorkType = Array<{
+  name: string;
   title: string;
   description: string;
   projectLink: string;
@@ -18,7 +19,7 @@ type WorkType = Array<{
   tags: Array<ReactNode>;
 }>;
 
-const Work = (props: Props) => {
+const Work = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState<WorkType>([]);
