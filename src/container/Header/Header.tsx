@@ -1,10 +1,9 @@
 import './Header.scss';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
+import Typewriter from 'typewriter-effect';
 
 import { AppWrap } from 'wrapper';
-
-type Props = {};
 
 const scaleVariants = {
   whileInView: {
@@ -16,7 +15,17 @@ const scaleVariants = {
   },
 };
 
-const Header = (props: Props) => {
+const positions = [
+  'Software Engineer',
+  'Web Developer',
+  'React Developer',
+  'Front-end Developer',
+  'Backend Developer',
+  'MERN Stack Developer',
+  'Open Source Contributor',
+];
+
+const Header = () => {
   return (
     <div className='app__header app__flex'>
       <motion.div
@@ -34,8 +43,18 @@ const Header = (props: Props) => {
           </div>
 
           <div className='tag-cmp app__flex'>
-            <p className='p-text'>Web Developer</p>
-            <p className='p-text'>Software Engineer</p>
+            {/* <p className='p-text'>Web Developer</p> */}
+            {/* <p className='p-text'>Software Engineer</p> */}
+            <p className='p-text'>
+              <Typewriter
+                options={{
+                  strings: positions,
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                }}
+              />
+            </p>
           </div>
         </div>
       </motion.div>
