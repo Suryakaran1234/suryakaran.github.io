@@ -27,10 +27,15 @@
 
     transition: all 0.3s ease-in-out;
 
-    img {
+    img,
+    .download_icon {
       width: 40px;
       height: 40px;
       margin: 0 0.7rem;
+    }
+
+    .download_icon {
+      color: #313bac;
     }
 
     p {
@@ -75,7 +80,8 @@
 
     transition: all 0.3s ease-in-out;
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 0.95rem;
       border: none;

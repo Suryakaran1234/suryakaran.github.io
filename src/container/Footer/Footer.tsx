@@ -1,6 +1,7 @@
-import { useState, ChangeEvent, SyntheticEvent, ChangeEventHandler } from 'react';
+import { useState, ChangeEvent, SyntheticEvent } from 'react';
+import { FiDownloadCloud } from 'react-icons/fi';
 
-import { images } from '../../constants';
+import { images, resume } from '../../constants';
 import { AppWrap, MotionWrap } from 'wrapper';
 import { urlFor, client } from 'client';
 import './Footer.scss';
@@ -48,6 +49,12 @@ const Footer = () => {
           <img src={images.mobile} alt='mobile' />
           <a href='tel: +1 (437) 258-1603' className='p-text'>
             +1 (437) 258-1603
+          </a>
+        </div>
+        <div className='app__footer-card'>
+          <FiDownloadCloud className='download_icon' />
+          <a href={resume} className='p-text' download='Resume.pdf'>
+            Download Resume
           </a>
         </div>
       </div>
