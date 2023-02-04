@@ -19,6 +19,7 @@ type BrandType = Array<{
   _id: string;
   name: string;
   imgUrl: string;
+  brandLink: string;
 }>;
 
 const Testimonial = () => {
@@ -92,7 +93,9 @@ const Testimonial = () => {
             transition={{ duration: 0.5, type: 'tween' }}
             key={brand._id}
           >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            <a href={brand.brandLink}>
+              <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            </a>
           </motion.div>
         ))}
       </div>
